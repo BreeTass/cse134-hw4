@@ -1,0 +1,175 @@
+:root {
+    --main-bg-color: #EFF8E2;
+    --dark-accent-color: #23022E;
+    --visited-color: #b054c7;
+    --bright-accent-color: #B287BD;
+    --color-highlight: #573280;
+
+    font-family: Bahnschrift, Helvetica, sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--dark-accent-color);
+    height: 100%;
+    line-height: normal;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header, nav, ul {
+    display: flex;
+    flex-direction: row;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+a:link {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--dark-accent-color);
+}
+
+a:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--visited-color);
+}
+
+a:hover, a:focus, a:active { 
+	text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+img {
+    object-fit: cover;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--bright-accent-color);
+    padding: 1rem 2rem 1rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+/* The > character selects any nav that is a direct child of the header. */
+header > nav {
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.page-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+header ul {
+    flex-direction: column;
+}
+
+.header-button {
+    transition-duration: 200ms;
+}
+
+.header-button:hover, .header-button:focus, .header-button:active {
+    transform: scale(1.1);
+}
+
+/* The space combinator selects any a:visited that is a descendent of header. */
+header a:visited {
+    color: var(--dark-accent-color);
+}
+
+header a:hover, header a:focus, header a:active {
+    text-decoration: none;
+}
+
+main {
+    height: auto;
+    flex-grow: 1;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+footer {
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: var(--bright-accent-color);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+ul {
+    list-style-type: none;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+button, .form-button {
+    background-color: var(--dark-accent-color);
+    color: var(--main-bg-color);
+    border-radius: 1em;
+    border: none;
+    padding: 1em;
+}
+
+
+
+@media (min-width: 700px) {
+
+    main {
+        text-align: left;
+        width: 650px;
+    }
+
+    header ul {
+        flex-direction: row;
+    }
+
+    /* The > character selects any nav that is a direct child of the header. */
+    header > nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+@media (min-width: 1000px) {
+
+    main {
+        width: 900px;
+    }
+
+}

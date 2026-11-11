@@ -1,0 +1,28 @@
+main > h2 {
+    margin-bottom: 1rem;
+}
+
+form {
+    width: 100%;
+}
+
+fieldset {
+    background-color: var(--bright-accent-color);
+    border-radius: 2rem;
+    border: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+textarea {
+    resize: vertical;
+    height: 6rem;
+}

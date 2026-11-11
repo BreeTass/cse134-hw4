@@ -1,0 +1,64 @@
+.personal-info, .profile-picture {
+    display: flex;
+    flex-direction: row;
+}
+
+#homepage-name {
+    font-size: 5rem;
+    padding: 0;
+}
+
+.homepage-nav ul {
+    flex-grow: 0;
+    background-color: var(--bright-accent-color);
+    padding: 1.5rem;
+    border-radius: 4rem;
+    border: 3px solid var(--dark-accent-color);
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 10rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+    display: none;
+}
+
+#welcome-message {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: last baseline;
+}
+
+@media (min-width: 700px) {
+
+    #homepage-name {
+        font-size: 6rem;
+    }
+
+    .personal-info {
+        align-items: center;
+    }
+
+}
+
+@media (min-width: 1000px) {
+
+    main {
+        max-width: none;
+        width: 70%;
+    }
+
+    .profile-picture {
+        display: block;
+        width: 30%;
+    }
+}

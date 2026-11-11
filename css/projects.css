@@ -1,0 +1,49 @@
+.top-project-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0;
+    justify-content: center;
+}
+
+.top-project-list img {
+    width: 100%;
+    aspect-ratio: 1.6;
+    border-radius: 1rem;
+}
+
+.top-project-list p {
+    margin: 0.5rem;
+}
+
+.timeline-list {
+    display: flex;
+    flex-direction: column;
+}
+
+project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+project-card img {
+    width: 80%;
+    aspect-ratio: 1.6;
+    border-radius: 1rem;
+    align-self: center;
+    margin: 2rem;
+}
+
+@media (min-width: 700px) {
+
+    .top-project-list {
+        flex-wrap: nowrap;
+    }
+
+    .top-project-list img {
+        width: 100%;
+    }
+
+}
