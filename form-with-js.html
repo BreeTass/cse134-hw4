@@ -32,7 +32,7 @@
     <main>
         <h1>Form With JS</h1>
         <h2>Send a message!</h2>
-        <form method="post" action="https://httpbin.org/post">
+        <form method="post" action="https://httpbin.org/post" target="_blank">
             <fieldset>
                 <label for="name">*Name: (1-100 characters)</label>
                 <input type="text" id="name" name="name" autocomplete="name" minlength="1" maxlength="100" required>
@@ -42,8 +42,9 @@
                 <textarea id="comments" name="comments" minlength="10" maxlength="1000" required></textarea>
                 <p id="char-count">Remaining Characters: 1000</p>
                 <p id="error-message"></p>
-                <input type="hidden" name="possible_bot" value="true">
                 <p>* = Required Field</p>
+                <input type="hidden" id="possible_bot" name="possible_bot" value="true">
+                <input type="hidden" id="form-errors" name="form-errors">
                 <input type="submit" class="form-button"/>
             </fieldset>
         </form>
