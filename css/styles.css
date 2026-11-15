@@ -150,9 +150,6 @@ button:focus, input:focus, textarea:focus, iframe:focus {
 
 form {
     width: 100%;
-}
-
-fieldset {
     background-color: var(--bright-accent-color);
     border-radius: 2rem;
     border: none;

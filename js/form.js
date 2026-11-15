@@ -1,5 +1,10 @@
 const form = document.querySelector('form');
 
+const jsElements = form.querySelectorAll('.js-element');
+for (let e of jsElements) {
+    e.style.display = 'flex';    
+}
+
 function validate(input) {
     const validityState = input.validity;
     if (validityState.valueMissing) {
@@ -11,18 +16,37 @@ function validate(input) {
     } else {
         input.setCustomValidity('');
     }
+    updateErrorMessages();
 }
 
 function removeValidation(input) {
-    if (input.validity.valid) {
+    const validityState = input.validity;
+    if (validityState.customError && !validityState.valueMissing && !validityState.tooShort && !validityState.typeMismatch) {
         input.setCustomValidity('');
+        updateErrorMessages();
     }
 }
 
-// TODO: finish this part
-const errorMessage = form.querySelector('#error-message');
-function updateErrorMessage(input) {
-    errorMessage.innerText = input.validationMessage;
+const inputs = form.querySelectorAll('input[type="text"], input[type="email"], textarea');
+const errorMessageList = form.querySelector('#error-messages');
+function updateErrorMessages() {
+    errorMessageList.innerHTML = '';
+    for (let input of inputs) {
+        if (input.validity.customError) {
+            let entry = document.createElement('li');
+
+            let field;
+            let id = input.id;
+            if (id === 'name') field = 'Name Field: ';
+            else if (id === 'email') field = 'Email Field: ';
+            else if (id === 'comments') field = 'Comments Field: ';
+            else field = 'Unknown Field: ';
+
+            let message = field + input.validationMessage;
+            entry.appendChild(document.createTextNode(message));
+            errorMessageList.appendChild(entry);
+        }
+    }
 }
 
 const form_errors = []
@@ -50,14 +74,10 @@ function saveErrorList() {
     form_errors.length = 0;
 }
 
-// TODO: check if these are the correct listeners
-const inputs = form.querySelectorAll('input[type="text"], input[type="email"], textarea');
 for (let input of inputs) {
     input.addEventListener('input', () => removeValidation(input));
     input.addEventListener('focusout', () => validate(input));
-    input.addEventListener('focusout', () => updateErrorMessage(input));
     input.addEventListener('invalid', () => validate(input));
-    input.addEventListener('invalid', () => updateErrorMessage(input));
     input.addEventListener('invalid', () => updateErrorList(input));
 }
 form.addEventListener('submit', () => saveErrorList());
