@@ -1,8 +1,9 @@
 :root {
     --main-bg-color: #EFF8E2;
     --dark-accent-color: #23022E;
-    --visited-color: #b054c7;
+    --visited-color: #b20a6f;
     --bright-accent-color: #B287BD;
+    --link-color: #804090;
     /* --color-highlight: #573280; */
 
     font-family: Bahnschrift, Helvetica, sans-serif;
@@ -10,6 +11,15 @@
     color: var(--dark-accent-color);
     height: 100%;
     line-height: normal;
+}
+
+:root.dark-mode {
+    --main-bg-color: #23022E;
+    --dark-accent-color: #EFF8E2;
+    --visited-color: #ce83e0;
+    --bright-accent-color: #391e58;
+    --link-color: #7c2dad;
+    /* --color-highlight: #573280; */
 }
 
 body {
@@ -24,6 +34,20 @@ body {
 header, nav, ul {
     display: flex;
     flex-direction: row;
+}
+
+.theme-toggle {
+    padding: 0;
+    margin: 0;
+    border-radius: 0.5rem;
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+
+.theme-toggle p {
+    width: 50px;
+    height: 50px;
 }
 
 h1, h2, h3 {
@@ -43,10 +67,14 @@ h3 {
     font-size: 1.3rem;
 }
 
+header a {
+    color: var(--dark-accent-color);
+}
+
 a:link {
     font-weight: bold;
     text-decoration: none;
-    color: var(--dark-accent-color);
+    color: var(--link-color);
 }
 
 a:visited {
@@ -184,9 +212,10 @@ input:user-invalid, textarea:user-invalid {
 
     header ul {
         flex-direction: row;
+        flex-grow: 1;
+        justify-content: end;
     }
 
-    /* The > character selects any nav that is a direct child of the header. */
     header > nav {
         flex-direction: row;
         justify-content: space-between;

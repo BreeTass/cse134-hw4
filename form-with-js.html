@@ -8,6 +8,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/form-with-js.css">
+    <script src="/js/globals.js" defer></script>
     <script src="/js/form.js" defer></script>
 </head>
 
@@ -26,13 +27,16 @@
                 <li class="header-button"><a href="form-no-js.html">Form-No-JS</a></li>
                 <li class="header-button"><a href="form-with-js.html">Form-With-JS</a></li>
             </ul>
+            <button class="theme-toggle">
+                Toggle Theme
+            </button>
         </nav>
     </header>
     
     <main>
         <h1>Form With JS</h1>
         <h2>Send a message!</h2>
-        <form method="post" action="https://httpbin.org/post" target="_blank">
+        <form method="post" action="https://httpbin.org/post">
             <fieldset>
                 <label for="name">*Name: </label>
                 <p id="name-requirements">1-100 characters</p>

@@ -8,6 +8,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/homepage.css">
+    <script src="/js/globals.js" defer></script>
 </head>
 
 <body>
@@ -25,28 +26,17 @@
                 <li class="header-button"><a href="form-no-js.html">Form-No-JS</a></li>
                 <li class="header-button"><a href="form-with-js.html">Form-With-JS</a></li>
             </ul>
+            <button class="theme-toggle">
+                Toggle Theme
+            </button>
         </nav>
     </header>
     
     <main>
-        <script>
-            class HelloWorld extends HTMLElement {
-                connectedCallback() {
-                    console.log("Hello World!");
-                }
-            }
-            customElements.define("hello-world", HelloWorld);
-        </script>
         <hello-world></hello-world>
 
         <section class="personal-info">
             <section class="name-and-links">
-    
-                <script></script>
-                <!-- TODO: add a cool background animation with this script -->
-                <noscript>
-                    <img src="images/placeholder.png" alt="Colorful Homepage Background with Abstract Shapes">
-                </noscript>
     
                 <h1 id="homepage-name">Bree Tassinari</h1>
                 <h2>Game Programmer & Software Engineer</h2>
